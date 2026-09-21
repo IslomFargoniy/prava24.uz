@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2019345912870056" crossorigin="anonymous"></script>
+    
+    <title>Yo'l Belgilari 2026 — O'zbekiston YHQ Belgilar Katalogi | Prava24.uz</title>
+    <meta name="description" content="O'zbekistondagi barcha yo'l belgilari rasmlari va tavsiflari bilan: ogohlantiruvchi, taqiqlovchi, buyuruvchi, imtiyozli va axborot belgilari 2026.">
+    <meta name="keywords" content="yol belgilari 2026, taqiqlovchi belgilar, yhq belgilari rasmlari, yol harakati qoidalari belgilar, prava24">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prava24.uz/road-signs.html">
+    <link rel="alternate" hreflang="uz" href="https://prava24.uz/road-signs.html">
+    <link rel="alternate" hreflang="ru" href="https://prava24.uz/ru/road-signs.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="logo.jpg" alt="Prava24 Logo" class="w-9 h-9 rounded-lg object-cover shadow-sm">
+                <span class="text-2xl font-black text-blue-600 tracking-tight">PRAVA24</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-6 font-semibold text-sm text-gray-600">
+                <a href="tickets.html" class="hover:text-blue-600 transition">Imtihon Testlari</a>
+                <a href="road-signs.html" class="text-blue-600 font-bold">Yo'l belgilari</a>
+                <a href="fines.html" class="hover:text-blue-600 transition">Jarimalar 2026</a>
+                <a href="rules.html" class="hover:text-blue-600 transition">Qoidalar & Qo'llanmalar</a>
+                <a href="about.html" class="hover:text-blue-600 transition">Biz haqimizda</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Aloqa</a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="ru/road-signs.html" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
+                    🇷🇺 Русский
+                </a>
+                <a href="tickets.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100">
+                    Test topshirish
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="bg-gradient-to-b from-blue-50/70 via-white to-gray-50 py-12 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-wider bg-blue-100 px-3 py-1 rounded-full">YHQ Ma'lumotnomasi</span>
+            <h1 class="text-3xl md:text-5xl font-black text-gray-900 mt-4 mb-4 tracking-tight">
+                Yo'l Belgilari Katalogi 2026
+            </h1>
+            <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-6">
+                O'zbekiston Respublikasi Yo'l harakati qoidalarida belgilangan barcha rasmiy belgilar, ularning raqamlari va batafsil tushuntirishlari.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                <input id="signSearchInput" type="text" placeholder="Belgi nomi yoki raqamini qidiring (masalan: 3.24, piyoda, tezlik)..." class="w-full pl-11 pr-4 py-3 rounded-2xl border border-gray-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" oninput="filterSigns()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap gap-2 justify-center mb-8" id="categoryFilterContainer">
+            <button onclick="setCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white shadow-sm" data-cat="all">Barchasi</button>
+            <button onclick="setCategory('1')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="1">1. Ogohlantiruvchi</button>
+            <button onclick="setCategory('2')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="2">2. Imtiyozli</button>
+            <button onclick="setCategory('3')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="3">3. Taqiqlovchi</button>
+            <button onclick="setCategory('4')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="4">4. Buyuruvchi</button>
+            <button onclick="setCategory('5')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="5">5. Axborot-ishora</button>
+            <button onclick="setCategory('6')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100" data-cat="6">6. Servis belgilari</button>
+        </div>
+
+        <!-- Signs Grid -->
+        <div id="signsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Rendered by JS -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-16">
+            <i class="fas fa-search text-gray-300 text-5xl mb-4"></i>
+            <h3 class="text-lg font-bold text-gray-700">Hech qanday belgi topilmadi</h3>
+            <p class="text-sm text-gray-500">Iltimos, boshqa qidiruv so'zini kiriting yoki toifani almashtiring.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white pt-16 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 border-b border-gray-800 pb-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center space-x-2 mb-4 text-2xl font-black">
+                    <img src="logo.jpg" alt="Logo" class="w-8 h-8 rounded-lg">
+                    <span class="text-blue-500">PRAVA24</span>
+                </div>
+                <p class="text-gray-400 text-sm max-w-sm">
+                    O'zbekistondagi haydovchilik imtihoniga (GAI/YHQ) tayyorlanish uchun bepul onlayn platforma.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-sm tracking-wider uppercase text-gray-300">Bo'limlar</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="tickets.html" class="hover:text-white transition">Onlayn Testlar</a></li>
+                    <li><a href="road-signs.html" class="hover:text-white transition text-blue-400">Yo'l belgilari</a></li>
+                    <li><a href="fines.html" class="hover:text-white transition">Jarimalar jadvali</a></li>
+                    <li><a href="rules.html" class="hover:text-white transition">YHQ Qoidalari</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-sm tracking-wider uppercase text-gray-300">Ma'lumot</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="about.html" class="hover:text-white transition">Biz haqimizda</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Aloqa</a></li>
+                    <li><a href="privacy-policy.html" class="hover:text-white transition">Maxfiylik siyosati</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition">Foydalanish shartlari</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-xs">
+            <p>&copy; 2026 Prava24.uz — Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Road Signs Data & Engine -->
+    <script>
+        const roadSignsData = [
+            // 1. Ogohlantiruvchi
+            {
+                number: "1.1",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Shlagbaumli temir yo'l kesishmasi",
+                icon: "fa-train",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Shlagbaum bilan jihozlangan temir yo'l kesishmasiga yaqinlashayotganlik haqida ogohlantiradi (Aholi punktida 50-100 m, tashqarida 150-300 m masofada o'rnatiladi)."
+            },
+            {
+                number: "1.2",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Shlagbaumsiz temir yo'l kesishmasi",
+                icon: "fa-train-subway",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Shlagbaum bilan jihozlanmagan temir yo'l kesishmasiga yaqinlashayotganlik haqida ogohlantiradi. Haydovchidan alohida hushyorlikni talab etadi."
+            },
+            {
+                number: "1.11.1",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Xavfli burilish (O'ngga)",
+                icon: "fa-arrow-turn-up",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Kichik radiusli yoki ko'rish masofasi cheklangan yo'lning o'ngga xavfli burilish qismi haqida ogohlantiradi. Tezlikni kamaytirish talab etiladi."
+            },
+            {
+                number: "1.20",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Piyodalar o'tish joyi",
+                icon: "fa-person-walking",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "5.16.1, 5.16.2 belgilari va (yoki) 1.14.1-1.14.3 chiziqlari bilan belgilangan tartibga solinmagan piyodalar o'tish joyiga yaqinlashayotganlikdan ogohlantiradi."
+            },
+            {
+                number: "1.21",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Bolalar",
+                icon: "fa-children",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Bolalar muassasasi (maktab, dam olish maskani va h.k.)ga yaqin yo'l qismida bolalarning to'satdan chiqib qolish xavfi borligidan ogohlantiradi."
+            },
+            {
+                number: "1.23",
+                category: "1",
+                categoryName: "Ogohlantiruvchi",
+                title: "Yo'l ishlari",
+                icon: "fa-person-digging",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Yo'l qoplamasida yoki unga tutash hududda ta'mirlash ishlari bajarilayotganligi haqida ogohlantiradi."
+            },
+
+            // 2. Imtiyozli
+            {
+                number: "2.1",
+                category: "2",
+                categoryName: "Imtiyozli",
+                title: "Asosiy yo'l (Bosh yo'l)",
+                icon: "fa-diamond",
+                iconColor: "text-amber-500",
+                badgeBg: "bg-amber-50 text-amber-800 border-amber-200",
+                description: "Tartibga solinmagan chorrahalarda haydovchiga harakatlanish ustunligini (imtiyozini) beradi."
+            },
+            {
+                number: "2.4",
+                category: "2",
+                categoryName: "Imtiyozli",
+                title: "Yo'l bering (Ustunlik bermang)",
+                icon: "fa-triangle-exclamation",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Haydovchi kesib o'tilayotgan yo'ldan, agar 7.13 qo'shimcha belgisi bo'lsa — asosiy yo'ldan kelayotgan transport vositalariga yo'l berishi shart."
+            },
+            {
+                number: "2.5",
+                category: "2",
+                categoryName: "Imtiyozli",
+                title: "To'xtamasdan harakatlanish taqiqlangan (STOP)",
+                icon: "fa-hand",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "To'xtash chizig'i oldida, u bo'lmaganda kesishadigan qatnov qismi chetida majburiy to'xtashni talab etadi."
+            },
+
+            // 3. Taqiqlovchi
+            {
+                number: "3.1",
+                category: "3",
+                categoryName: "Taqiqlovchi",
+                title: "Kirish taqiqlangan (G'isht)",
+                icon: "fa-ban",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Ushbu yo'nalishda barcha transport vositalarining kirishini taqiqlaydi (marshrutli transportlar istisno)."
+            },
+            {
+                number: "3.20",
+                category: "3",
+                categoryName: "Taqiqlovchi",
+                title: "O'zib o'tish taqiqlangan",
+                icon: "fa-arrows-left-right",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Barcha transport vositalariga boshqa transport vositalarini (soatiga 30 km dan kam tezlikdagi yakka transport vositalari bundan mustasno) quvib o'tish taqiqlanadi."
+            },
+            {
+                number: "3.24",
+                category: "3",
+                categoryName: "Taqiqlovchi",
+                title: "Yuqori tezlik cheklangan",
+                icon: "fa-gauge-high",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Belgida ko'rsatilganidan yuqori tezlikda (masalan: 50 yoki 70 km/soat) harakatlanishni taqiqlaydi."
+            },
+            {
+                number: "3.27",
+                category: "3",
+                categoryName: "Taqiqlovchi",
+                title: "To'xtash taqiqlangan",
+                icon: "fa-circle-xmark",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Transport vositalarining to'xtashi va to'xtab turishi qat'iyan taqiqlanadi."
+            },
+            {
+                number: "3.28",
+                category: "3",
+                categoryName: "Taqiqlovchi",
+                title: "To'xtab turish taqiqlangan",
+                icon: "fa-slash",
+                iconColor: "text-red-600",
+                badgeBg: "bg-red-50 text-red-700 border-red-200",
+                description: "Transport vositalarining 5 daqiqadan ortiq to'xtab turishi (yo'lovchilarni tushirish/chiqarishdan tashqari) taqiqlanadi."
+            },
+
+            // 4. Buyuruvchi
+            {
+                number: "4.1.1",
+                category: "4",
+                categoryName: "Buyuruvchi",
+                title: "Harakat faqat to'g'riga",
+                icon: "fa-arrow-up",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-blue-50 text-blue-700 border-blue-200",
+                description: "Faqat to'g'ri yo'nalishda harakatlanishga ruxsat beradi. O'ngga va chapga burilish yoki qayrilib olish taqiqlanadi."
+            },
+            {
+                number: "4.3",
+                category: "4",
+                categoryName: "Buyuruvchi",
+                title: "Aylanma harakat",
+                icon: "fa-rotate",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-blue-50 text-blue-700 border-blue-200",
+                description: "Belgida ko'rsatilgan strelkalar yo'nalishi (soat strelkasiga qarshi) bo'yicha harakatlanishga ruxsat beriladi."
+            },
+            {
+                number: "4.4",
+                category: "4",
+                categoryName: "Buyuruvchi",
+                title: "Velosiped yo'lkasi",
+                icon: "fa-bicycle",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-blue-50 text-blue-700 border-blue-200",
+                description: "Faqat velosipedlar va mopedlarning harakatlanishiga ruxsat etiladi."
+            },
+
+            // 5. Axborot-ishora
+            {
+                number: "5.1",
+                category: "5",
+                categoryName: "Axborot-ishora",
+                title: "Avtomagistral",
+                icon: "fa-road",
+                iconColor: "text-emerald-600",
+                badgeBg: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                description: "O'zbekiston YHQning avtomagistrallarda harakatlanish tartibi o'rnatilgan maxsus yo'l (ruxsat etilgan tezlik 110 km/soatgacha)."
+            },
+            {
+                number: "5.15",
+                category: "5",
+                categoryName: "Axborot-ishora",
+                title: "To'xtash joyi (Parkovka)",
+                icon: "fa-square-p",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-blue-50 text-blue-700 border-blue-200",
+                description: "Transport vositalarini to'xtab turishi (avtoturargoh) uchun maxsus maydon yoki hududni bildiradi."
+            },
+            {
+                number: "5.16.1",
+                category: "5",
+                categoryName: "Axborot-ishora",
+                title: "Piyodalar o'tish joyi",
+                icon: "fa-person-walking-dashed-line-arrow-right",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-blue-50 text-blue-700 border-blue-200",
+                description: "Qatnov qismida piyodalar uchun belgilangan xavfsiz o'tish joyining chegarasini ko'rsatadi."
+            },
+
+            // 6. Servis
+            {
+                number: "6.1",
+                category: "6",
+                categoryName: "Servis",
+                title: "Birinchi tibbiy yordam punkti",
+                icon: "fa-square-plus",
+                iconColor: "text-red-600",
+                badgeBg: "bg-teal-50 text-teal-800 border-teal-200",
+                description: "Yo'l yaqinida joylashgan tibbiy muassasa yoki birinchi tibbiy yordam punkti haqida ma'lumot beradi."
+            },
+            {
+                number: "6.3",
+                category: "6",
+                categoryName: "Servis",
+                title: "Yoqilg'i quyish shoxobchasi (Zapravka)",
+                icon: "fa-gas-pump",
+                iconColor: "text-blue-600",
+                badgeBg: "bg-teal-50 text-teal-800 border-teal-200",
+                description: "Yo'l bo'yidagi avtomobillarga benzin, dizel yoki gaz quyish shoxobchasi joylashuvini bildiradi."
+            },
+            {
+                number: "6.4",
+                category: "6",
+                categoryName: "Servis",
+                title: "Avtomobillarga texnik xizmat ko'rsatish (Avtoservis)",
+                icon: "fa-wrench",
+                iconColor: "text-indigo-600",
+                badgeBg: "bg-teal-50 text-teal-800 border-teal-200",
+                description: "Yo'ldagi nosozliklarni bartaraf etish yoki texnik xizmat ko'rsatish ustaxonasi mavjudligini bildiradi."
+            }
+        ];
+
+        let selectedCategory = 'all';
+
+        function renderSigns() {
+            const grid = document.getElementById('signsGrid');
+            const searchVal = document.getElementById('signSearchInput').value.toLowerCase().trim();
+            grid.innerHTML = '';
+
+            const filtered = roadSignsData.filter(item => {
+                const matchesCat = (selectedCategory === 'all' || item.category === selectedCategory);
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || 
+                                      item.number.toLowerCase().includes(searchVal) || 
+                                      item.description.toLowerCase().includes(searchVal) ||
+                                      item.categoryName.toLowerCase().includes(searchVal);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                document.getElementById('noResults').classList.remove('hidden');
+            } else {
+                document.getElementById('noResults').classList.add('hidden');
+                filtered.forEach(sign => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col justify-between';
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-xl text-xs font-bold border ${sign.badgeBg}">
+                                    ${sign.number} • ${sign.categoryName}
+                                </span>
+                                <div class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-2xl ${sign.iconColor} shadow-inner">
+                                    <i class="fas ${sign.icon}"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-black text-gray-900 text-base mb-2">${sign.title}</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">${sign.description}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-50 flex items-center justify-between text-xs text-blue-600 font-bold">
+                            <span>YHQ 2026 standarti</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        function setCategory(cat) {
+            selectedCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:bg-gray-100';
+                }
+            });
+            renderSigns();
+        }
+
+        function filterSigns() {
+            renderSigns();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderSigns);
+    </script>
+
+</body>
+</html>
