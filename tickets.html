@@ -9,8 +9,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2019345912870056" crossorigin="anonymous"></script>
     
     <title>YHQ Imtihon Testlari 2026 — Onlayn Prava Biletlari | Prava24.uz</title>
-    <meta name="description" content="2026-yilgi O'zbekiston YHQ rasmiy imtihon biletlari va testlarini onlayn yeching. 20 ta savol, 20 daqiqalik taymer, xatolar tahlili va bepul imtihon simulyatori.">
-    <meta name="keywords" content="yhq test 2026, prava biletlari, gai imtihon testlari, onlayn avtomaktab testi, prava24 test">
+    <meta name="description" content="panel.prava24.uz bazasidagi 2026-yilgi O'zbekiston YHQ rasmiy imtihon biletlari va testlarini onlayn yeching. Rasmiy rasmli savollar, taymer va xatolar tahlili.">
+    <meta name="keywords" content="yhq test 2026, prava biletlari, gai imtihon testlari, onlayn avtomaktab testi, prava24 test, panel prava24">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prava24.uz/tickets.html">
     <link rel="alternate" hreflang="uz" href="https://prava24.uz/tickets.html">
@@ -18,7 +18,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
@@ -44,8 +44,8 @@
                 <a href="ru/tickets.html" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
                     🇷🇺 Русский
                 </a>
-                <a href="https://t.me/Prava24Bot" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100">
-                    <i class="fab fa-telegram mr-1.5"></i> Telegram Bot
+                <a href="https://panel.prava24.uz" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100">
+                    <i class="fas fa-user mr-1.5"></i> Kabinetga kirish
                 </a>
             </div>
         </div>
@@ -56,15 +56,15 @@
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 <span class="bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    2026 Rasmiy Standart
+                    Prava24 Rasmiy Savollar Bazasi (130 ta Bilet / 1300 ta Savol)
                 </span>
                 <h1 class="text-2xl md:text-3xl font-black mt-2">YHQ Nazariy Imtihon Simulyatori</h1>
-                <p class="text-blue-200 text-sm mt-1">20 ta savol • 20 daqiqa • Ruxsat etilgan xatolar: maksimal 2 ta</p>
+                <p class="text-blue-200 text-sm mt-1">10 ta savol • 15 daqiqa • panel.prava24.uz rasmiy bazasidan</p>
             </div>
             <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10">
                 <div class="text-center">
                     <div class="text-xs text-blue-200 font-semibold uppercase">Qolgan vaqt</div>
-                    <div id="timerDisplay" class="text-2xl font-black font-mono text-yellow-300">20:00</div>
+                    <div id="timerDisplay" class="text-2xl font-black font-mono text-yellow-300">15:00</div>
                 </div>
                 <button id="resetQuizBtn" onclick="resetQuiz()" class="bg-white text-blue-800 hover:bg-blue-50 px-4 py-2 rounded-xl font-bold text-xs transition">
                     <i class="fas fa-redo-alt mr-1"></i> Qayta boshlash
@@ -80,18 +80,14 @@
         <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 mb-6 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center space-x-2">
                 <span class="text-sm font-bold text-gray-700">Biletni tanlang:</span>
-                <div class="flex space-x-1.5 overflow-x-auto py-1" id="ticketTabs">
-                    <button onclick="loadTicket(1)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white" data-ticket="1">Bilet №1</button>
-                    <button onclick="loadTicket(2)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="2">Bilet №2</button>
-                    <button onclick="loadTicket(3)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="3">Bilet №3</button>
-                    <button onclick="loadTicket(4)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="4">Bilet №4</button>
-                    <button onclick="loadTicket(5)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="5">Bilet №5</button>
+                <div class="flex space-x-1.5 overflow-x-auto py-1" id="ticketTabsContainer">
+                    <!-- Populated dynamically from panel_data.js -->
                 </div>
             </div>
             <div class="flex items-center space-x-4 text-xs font-semibold">
                 <span class="flex items-center text-green-600"><span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-1.5"></span> To'g'ri: <strong id="correctCount" class="ml-1">0</strong></span>
                 <span class="flex items-center text-red-600"><span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-1.5"></span> Xato: <strong id="wrongCount" class="ml-1">0</strong></span>
-                <span class="flex items-center text-gray-500"><span class="w-2.5 h-2.5 rounded-full bg-gray-400 mr-1.5"></span> Qolgan: <strong id="unansweredCount" class="ml-1">20</strong></span>
+                <span class="flex items-center text-gray-500"><span class="w-2.5 h-2.5 rounded-full bg-gray-400 mr-1.5"></span> Qolgan: <strong id="unansweredCount" class="ml-1">10</strong></span>
             </div>
         </div>
 
@@ -104,24 +100,21 @@
                     <!-- Question Header -->
                     <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-100">
                         <span id="questionNumberBadge" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-xl">
-                            Savol 1 / 20
+                            Savol 1 / 10
                         </span>
-                        <span id="questionTopicBadge" class="text-xs font-semibold text-gray-400">
-                            Yo'l belgilari va chiziqlari
+                        <span id="ticketBadge" class="text-xs font-bold text-gray-500">
+                            1-Bilet
                         </span>
                     </div>
 
-                    <!-- Question Image (if any) / Visual Scenario Box -->
-                    <div id="scenarioVisual" class="mb-6 p-4 rounded-2xl bg-slate-900 text-white text-center flex flex-col items-center justify-center min-h-[140px] relative overflow-hidden">
-                        <i id="scenarioIcon" class="fas fa-traffic-light text-4xl text-yellow-400 mb-2"></i>
-                        <p id="scenarioText" class="text-xs text-slate-300 max-w-md font-mono">
-                            Chorraha: Svetoforning asosiy yashil chirog'i yonmoqda, qo'shimcha o'ng strelka o'chiq.
-                        </p>
+                    <!-- Question Image (Real image from panel storage) -->
+                    <div id="questionImageBox" class="mb-6 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center min-h-[160px] max-h-[320px]">
+                        <img id="questionImage" src="" alt="Savol rasmi" class="w-full h-full object-contain max-h-[300px]">
                     </div>
 
                     <!-- Question Text -->
                     <h2 id="questionText" class="text-lg md:text-xl font-bold text-gray-900 mb-6 leading-snug">
-                        Haydovchi qaysi yo'nalishlarda harakatlanishni davom ettirishi mumkin?
+                        ...
                     </h2>
 
                     <!-- Options List -->
@@ -130,11 +123,11 @@
                     </div>
 
                     <!-- Explanation Card (Shown on answer) -->
-                    <div id="explanationBox" class="hidden mt-6 p-4 rounded-2xl bg-blue-50 border border-blue-100 text-sm">
-                        <h4 class="font-bold text-blue-900 mb-1 flex items-center">
-                            <i class="fas fa-info-circle text-blue-600 mr-2"></i> Qoidaning batafsil izohi:
+                    <div id="explanationBox" class="hidden mt-6 p-5 rounded-2xl bg-blue-50 border border-blue-100 text-sm">
+                        <h4 class="font-bold text-blue-900 mb-1.5 flex items-center">
+                            <i class="fas fa-book-bookmark text-blue-600 mr-2"></i> YHQ rasmiy qoidasi izohi:
                         </h4>
-                        <p id="explanationText" class="text-blue-800 leading-relaxed"></p>
+                        <p id="explanationText" class="text-blue-900 leading-relaxed text-xs md:text-sm"></p>
                     </div>
 
                     <!-- Navigation Footer inside Card -->
@@ -149,77 +142,74 @@
 
                 </div>
 
-                <!-- Result Modal / Card (Hidden by default) -->
+                <!-- Result Card -->
                 <div id="resultCard" class="hidden bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center">
                     <div id="resultIcon" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-green-100 text-green-600">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h2 id="resultTitle" class="text-2xl font-black text-gray-900 mb-2">Imtihon Muvaffaqiyatli Topshirildi!</h2>
-                    <p id="resultSubtitle" class="text-gray-600 text-sm mb-6">Siz haqiqiy imtihondan o'tish uchun yetarli ball to'pladingiz.</p>
+                    <h2 id="resultTitle" class="text-2xl font-black text-gray-900 mb-2">Bilet Yakunlandi!</h2>
+                    <p id="resultSubtitle" class="text-gray-600 text-sm mb-6">Natijangiz hisoblandi.</p>
                     
                     <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-8">
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">To'g'ri</div>
-                            <div id="finalCorrect" class="text-xl font-black text-green-600">19</div>
+                            <div id="finalCorrect" class="text-xl font-black text-green-600">0</div>
                         </div>
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">Xato</div>
-                            <div id="finalWrong" class="text-xl font-black text-red-600">1</div>
+                            <div id="finalWrong" class="text-xl font-black text-red-600">0</div>
                         </div>
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">Natija</div>
-                            <div id="finalPercent" class="text-xl font-black text-blue-600">95%</div>
+                            <div id="finalPercent" class="text-xl font-black text-blue-600">0%</div>
                         </div>
                     </div>
 
-                    <div class="flex justify-center space-x-4">
-                        <button onclick="resetQuiz()" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
-                            <i class="fas fa-redo-alt mr-2"></i> Qayta topshirish
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button onclick="resetQuiz()" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-redo-alt mr-1.5"></i> Qayta topshirish
                         </button>
-                        <a href="https://t.me/Prava24Bot" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-black transition">
-                            <i class="fab fa-telegram mr-2"></i> Telegramda davom etish
+                        <a href="https://panel.prava24.uz" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-black transition text-sm">
+                            <i class="fas fa-layer-group mr-1.5"></i> Barcha 130 ta biletni ochish
                         </a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Right: Question Matrix Navigator & Tips -->
+            <!-- Right Column -->
             <div class="space-y-6">
                 
-                <!-- 1-20 Question Numbers Grid -->
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
                     <h3 class="text-sm font-black text-gray-900 uppercase tracking-wider mb-4 flex items-center justify-between">
-                        <span>Savollar xaritasi</span>
-                        <span class="text-xs font-normal text-gray-400">1-20</span>
+                        <span>Savollar ro'yxati</span>
+                        <span id="gridLabel" class="text-xs font-normal text-gray-400">1-10</span>
                     </h3>
                     <div id="questionGrid" class="grid grid-cols-5 gap-2.5">
-                        <!-- 20 buttons generated by JS -->
+                        <!-- Buttons generated by JS -->
                     </div>
                 </div>
 
-                <!-- Telegram Bot Banner -->
                 <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-6 text-white shadow-xl shadow-blue-500/10 text-center">
                     <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3">
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="font-black text-lg mb-1">Telegramda qulayroqmi?</h3>
+                    <h3 class="font-black text-lg mb-1">Prava24 Platformasi</h3>
                     <p class="text-blue-100 text-xs mb-4">
-                        @Prava24Bot orqali har kuni yangi savollar va marofonlarda ishtirok eting!
+                        Shaxsiy profilingizga kiring va 1300 ta rasmiy testlar bo'yicha shaxsiy statistikangizni kuzatib boring!
                     </p>
-                    <a href="https://t.me/Prava24Bot" target="_blank" class="block w-full bg-white text-blue-700 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-50 transition">
-                        Botni ochish <i class="fas fa-external-link-alt ml-1"></i>
+                    <a href="https://panel.prava24.uz" target="_blank" class="block w-full bg-white text-blue-700 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-50 transition">
+                        panel.prava24.uz ga kirish <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
 
-                <!-- Exam Rules Guide Box -->
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 text-xs text-gray-600 space-y-2">
                     <h4 class="font-black text-gray-900 text-sm mb-2 flex items-center">
-                        <i class="fas fa-clipboard-check text-blue-600 mr-2"></i> Imtihon qoidalari:
+                        <i class="fas fa-circle-info text-blue-600 mr-2"></i> Bilet ma'lumotlari:
                     </h4>
-                    <p>• Jami 20 ta nazariy savol beriladi.</p>
-                    <p>• Imtihonni muvaffaqiyatli topshirish uchun kamida <strong>18 ta savolga</strong> to'g'ri javob berish lozim (maksimal 2 ta xato).</p>
-                    <p>• Ajratilgan vaqt: 20 daqiqa.</p>
+                    <p>• Barcha savollar va rasmlar <strong>panel.prava24.uz</strong> rasmiy bazasidan olingan.</p>
+                    <p>• Har bir biletda 10 ta rasmiy imtihon savoli mavjud.</p>
+                    <p>• Natijalar avtomatik baholanadi.</p>
                 </div>
 
             </div>
@@ -237,13 +227,13 @@
                     <span class="text-blue-500">PRAVA24</span>
                 </div>
                 <p class="text-gray-400 text-sm max-w-sm">
-                    O'zbekistondagi haydovchilik imtihoniga (GAI/YHQ) tayyorlanish uchun bepul onlayn platforma.
+                    O'zbekistondagi haydovchilik imtihoniga (GAI/YHQ) tayyorlanish uchun bepul onlayn ta'lim platformasi.
                 </p>
             </div>
             <div>
                 <h4 class="font-bold mb-4 text-sm tracking-wider uppercase text-gray-300">Bo'limlar</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="tickets.html" class="hover:text-white transition text-blue-400">Onlayn Testlar</a></li>
+                    <li><a href="tickets.html" class="hover:text-white transition text-blue-400">Imtihon Testlari</a></li>
                     <li><a href="road-signs.html" class="hover:text-white transition">Yo'l belgilari</a></li>
                     <li><a href="fines.html" class="hover:text-white transition">Jarimalar jadvali</a></li>
                     <li><a href="rules.html" class="hover:text-white transition">YHQ Qoidalari</a></li>
@@ -264,309 +254,45 @@
         </div>
     </footer>
 
-    <!-- Quiz Engine JS -->
+    <!-- Real Data Script -->
+    <script src="panel_data.js"></script>
     <script>
-        const ticketsDatabase = {
-            1: [
-                {
-                    topic: "Umumiy qoidalar",
-                    icon: "fa-car-side",
-                    scenario: "Aholi punktida ruxsat etilgan maksimal tezlik qoidasi.",
-                    question: "O'zbekiston Respublikasi aholi punktlarida transport vositalarining ruxsat etilgan eng yuqori tezligi qancha?",
-                    options: [
-                        "60 km/soat (maxsus belgilangan joylardan tashqari)",
-                        "70 km/soat",
-                        "80 km/soat",
-                        "50 km/soat"
-                    ],
-                    correct: 0,
-                    explanation: "2023-2026 yillardagi yangilangan YHQga muvofiq, Toshkent, Nukus va barcha viloyat/tuman markazlaridagi aholi punktlarida ruxsat etilgan maksimal tezlik 60 km/soat etib belgilangan."
-                },
-                {
-                    topic: "Yo'l belgilari",
-                    icon: "fa-ban",
-                    scenario: "3.24 'Yuqori tezlik cheklangan' belgisi o'rnatilgan hudud.",
-                    question: "3.24 'Yuqori tezlik cheklangan (50)' belgisi amal qilish sohasi qayergacha davom etadi?",
-                    options: [
-                        "Eng yaqin chorrahagacha yoki aholi punkti tugashigacha",
-                        "Keyingi 100 metr masofagacha",
-                        "Haydovchi o'z xohishiga ko'ra",
-                        "Faqat svetofor o'rnatilgan joygacha"
-                    ],
-                    correct: 0,
-                    explanation: "Taqiqlovchi belgilarning ta'siri ular o'rnatilgan joydan boshlab yo'lning eng yaqin chorrahasigacha, chorraha bo'lmaganda esa aholi punktining oxirigacha amal qiladi."
-                },
-                {
-                    topic: "Chorrahalar",
-                    icon: "fa-traffic-light",
-                    scenario: "Teng ahamiyatli bo'lmagan chorraha: Asosiy yo'l va ikkinchi darajali yo'l.",
-                    question: "Bosh yo'lda harakatlanayotgan haydovchi ikkinchi darajali yo'ldan chiqayotgan avtomobilga yo'l berishi kerakmi?",
-                    options: [
-                        "Yo'q, bosh yo'ldagi haydovchi imtiyozga (ustunlikka) ega",
-                        "Ha, agar u o'ng tomonda bo'lsa",
-                        "Faqat yuk avtomobili bo'lsa yo'l beradi",
-                        "Ikkala haydovchi o'zaro kelishib o'tadi"
-                    ],
-                    correct: 0,
-                    explanation: "Bosh yo'ldan kelayotgan transport vositasi ikkinchi darajali yo'ldan kirib kelayotgan har qanday transport vositasiga nisbatan harakatlanish ustunligiga ega."
-                },
-                {
-                    topic: "Xavfsizlik kamari",
-                    icon: "fa-user-shield",
-                    scenario: "Harakatlanish boshlanishi oldidan xavfsizlik choralari.",
-                    question: "Harakatlanish vaqtida kimlar xavfsizlik kamarini taqishi shart?",
-                    options: [
-                        "Haydovchi va konstruksiyasida kamar ko'zda tutilgan barcha yo'lovchilar",
-                        "Faqat haydovchi",
-                        "Faqat old o'rindiqdagi yo'lovchi",
-                        "Faqat shahar tashqarisiga chiqqanda"
-                    ],
-                    correct: 0,
-                    explanation: "YHQga muvofiq, konstruksiyasida xavfsizlik kamarlari ko'zda tutilgan barcha o'rindiqlardagi yo'lovchilar va haydovchi harakatlanish vaqtida kamarni taqishi shart."
-                },
-                {
-                    topic: "Piyodalar o'tish joyi",
-                    icon: "fa-person-walking",
-                    scenario: "Tartibga solinmagan piyodalar o'tish joyi (Zebra).",
-                    question: "Tartibga solinmagan piyodalar o'tish joyiga yaqinlashayotgan haydovchi nima qilishi shart?",
-                    options: [
-                        "Tezlikni kamaytirishi, yo'ldan o'tayotgan piyodalarga yo'l berishi shart",
-                        "Ovozli signal berib tezlikni oshirishi kerak",
-                        "Piyoda to'xtab turishini kutishi kerak",
-                        "Faqat o'ng chiziqda bo'lsa yo'l beradi"
-                    ],
-                    correct: 0,
-                    explanation: "Haydovchi tartibga solinmagan piyodalar o'tish joyiga yaqinlashganda tezlikni kamaytirishi va qatnov qismiga qadam qo'ygan piyodalarga yo'l berishi shart."
-                },
-                {
-                    topic: "Ogohlantiruvchi ishoralar",
-                    icon: "fa-lightbulb",
-                    scenario: "Burilish yoki chiziqni o'zgartirish manevri.",
-                    question: "Burilish ko'rsatkichlari (povorotnik) qachon yoqilishi va o'chirilishi kerak?",
-                    options: [
-                        "Manevr boshlanishidan oldin yoqiladi va manevr tugashi bilan darhol o'chiriladi",
-                        "Faqat manevr bajarilayotgan paytda yoqiladi",
-                        "Boshqa mashinalar bo'lmaganda yoqish shart emas",
-                        "Manevr tugaganidan 5 daqiqa keyin o'chiriladi"
-                    ],
-                    correct: 0,
-                    explanation: "Burilish ishorasi harakatni boshlash, qayta tizilish, burilish va to'xtashdan oldin o'z vaqtida yoqiladi va harakat bajarib bo'lingach darhol o'chiriladi."
-                },
-                {
-                    topic: "Telefon va gadjetlar",
-                    icon: "fa-mobile-screen",
-                    scenario: "Avtomobilni boshqarish vaqtida telefondan foydalanish.",
-                    question: "Avtomobilni boshqarish vaqtida telefondan foydalanishga qachon ruxsat beriladi?",
-                    options: [
-                        "Faqat 'Hands-free' (quloqchin yoki ovozli aloqa) tizimi orqali",
-                        "Xohlagan vaqtda qo'lda ushlab gaplashish mumkin",
-                        "Faqat svetoforda to'xtab turganda qo'lda ushlash mumkin",
-                        "Faqat SMS xabar yozish uchun ruxsat etiladi"
-                    ],
-                    correct: 0,
-                    explanation: "Haydovchiga transport vositasini boshqarish vaqtida telefondan qo'llarni ishlatmasdan so'zlashish imkonini beruvchi moslamalar (hands-free) orqaligina foydalanishga ruxsat etiladi."
-                },
-                {
-                    topic: "To'xtash va to'xtab turish",
-                    icon: "fa-square-parking",
-                    scenario: "Piyodalar o'tish joyi oldida to'xtash.",
-                    question: "Piyodalar o'tish joyiga qancha masofa qolganda to'xtash taqiqlanadi?",
-                    options: [
-                        "Piyodalar o'tish joyidan 5 metrdan kam masofada",
-                        "Piyodalar o'tish joyidan 15 metrdan kam masofada",
-                        "Faqat piyodalar o'tish joyining ustida",
-                        "Cheklov mavjud emas"
-                    ],
-                    correct: 0,
-                    explanation: "Piyodalar o'tish joyida va undan oldin 5 metrdan kam masofada to'xtash taqiqlanadi."
-                },
-                {
-                    topic: "Temir yo'l kesishmasi",
-                    icon: "fa-train",
-                    scenario: "Shlagbaumli va miltillovchi qizil chiroqli temir yo'l kesishmasi.",
-                    question: "Temir yo'l kesishmasida qizil ishora miltillayotganda, ammo shlagbaum ochiq bo'lsa harakatlanish mumkinmi?",
-                    options: [
-                        "Taqiqlanadi, harakatni to'xtatish shart",
-                        "Shlagbaum ochiq bo'lgani uchun o'tish mumkin",
-                        "Faqat poyezd ko'rinmasa o'tish mumkin",
-                        "Tezlikni oshirib o'tib ketish kerak"
-                    ],
-                    correct: 0,
-                    explanation: "Svetoforning taqiqlovchi signali yoniq turganda shlagbaum holatidan qat'i nazar temir yo'l kesishmasiga kirish qat'iyan taqiqlanadi."
-                },
-                {
-                    topic: "Svetofor ishoralari",
-                    icon: "fa-traffic-light",
-                    scenario: "Sariq chiroq yonganda haydovchi harakati.",
-                    question: "Svetoforning sariq chirog'i nimani bildiradi?",
-                    options: [
-                        "Harakatlanishni taqiqlaydi va tez orada ishoralar almashishidan ogohlantiradi",
-                        "Harakatlanishga to'liq ruxsat beradi",
-                        "Faqat burilishga ruxsat beradi",
-                        "Barcha transportlar tezlashishi kerakligini bildiradi"
-                    ],
-                    correct: 0,
-                    explanation: "Sariq ishora harakatlanishni taqiqlaydi (keskin tormozlanishsiz to'xtash imkoni bo'lmagan hollar mustasno) va ishoralar almashinishidan ogohlantiradi."
-                },
-                {
-                    topic: "O'zib o'tish (Obgon)",
-                    icon: "fa-arrows-left-right",
-                    scenario: "Ko'rish masofasi cheklangan burilishlar va do'ngliklar.",
-                    question: "Tepaliklarning oxirida va xavfli burilishlarda o'zib o'tishga ruxsat beriladimi?",
-                    options: [
-                        "Qat'iyan taqiqlanadi",
-                        "Faqat sekin ketayotgan traktorlarni o'zib o'tish mumkin",
-                        "Faqat kunduz kuni ruxsat etiladi",
-                        "Qarama-qarshi mashina bo'lmasa ruxsat beriladi"
-                    ],
-                    correct: 0,
-                    explanation: "Ko'rish masofasi cheklangan yo'l qismlarida, tik tepaliklarning eng yuqori nuqtasida va xavfli burilishlarda qarama-qarshi yo'nalishga chiqib o'zib o'tish taqiqlanadi."
-                },
-                {
-                    topic: "Shatakka olish",
-                    icon: "fa-truck-pickup",
-                    scenario: "Yaxmalak (muzlama) sharoitida shatakka olish.",
-                    question: "Yaxmalak paytida egiluvchan ulagich (tros) yordamida shatakka olishga ruxsat etiladimi?",
-                    options: [
-                        "Taqiqlanadi",
-                        "Ruxsat beriladi, agar tezlik 20 km/soatdan oshmasa",
-                        "Faqat yuk mashinalari uchun ruxsat beriladi",
-                        "Faqat shahar ichida ruxsat beriladi"
-                    ],
-                    correct: 0,
-                    explanation: "Yaxmalak (sirpanchiq yo'l) sharoitida egiluvchan ulagichda shatakka olish qat'iyan taqiqlanadi (faqat qattiq ulagichda mumkin)."
-                },
-                {
-                    topic: "Maxsus xizmat transporti",
-                    icon: "fa-truck-medical",
-                    scenario: "Yaltiroq ko'k mayoqcha va maxsus tovushli signal yoqilgan tez yordam mashinasi.",
-                    question: "Ko'k mayoqcha va sirena yoqilgan transport vositasiga haydovchilar qanday munosabatda bo'lishi kerak?",
-                    options: [
-                        "Yo'l berishi va uning to'sqinliksiz o'tib ketishini ta'minlashi shart",
-                        "Tezlikni oshirib oldinda ketishi kerak",
-                        "Faqat o'ng tomonga qarab to'xtashi shart",
-                        "Signal chalishi kerak"
-                    ],
-                    correct: 0,
-                    explanation: "Ko'k yoki ko'k va qizil rangli yaltiroq mayoqchasi va maxsus tovushli signali yoqilgan transport vositasiga barcha haydovchilar yo'l berishi shart."
-                },
-                {
-                    topic: "Aylanma harakat",
-                    icon: "fa-rotate",
-                    scenario: "4.3 'Aylanma harakat' belgisi o'rnatilgan aylanma chorraha.",
-                    question: "Aylanma harakat chorrahasida (krug) qaysi haydovchi ustunlikka ega?",
-                    options: [
-                        "Aylanada (krug ichida) harakatlanayotgan transport vositalari",
-                        "Aylanaga kirib kelayotgan transport vositalari",
-                        "Kattaroq o'lchamdagi mashinalar",
-                        "O'ng tomondan kirib kelayotganlar"
-                    ],
-                    correct: 0,
-                    explanation: "Agar boshqa belgilar bilan tartibga solinmagan bo'lsa, aylanma harakatdagi (krug ichidagi) transport vositalari krugqa kirib kelayotganlarga nisbatan ustunlikka ega."
-                },
-                {
-                    topic: "Bolalarni tashish",
-                    icon: "fa-child",
-                    scenario: "12 yoshgacha bo'lgan bolalarni yengil avtomobilda tashish.",
-                    question: "Old o'rindiqda 12 yoshgacha bo'lgan bolalarni qanday holatda tashishga ruxsat beriladi?",
-                    options: [
-                        "Faqat maxsus bolalar o'rindig'i (avtokreslo) o'rnatilgan holda",
-                        "Kattalar qo'lida ushlab o'tirganda",
-                        "Oddiy xavfsizlik kamari bilan taqilganda",
-                        "Old o'rindiqda bolalarni tashish umuman taqiqlanadi"
-                    ],
-                    correct: 0,
-                    explanation: "12 yoshga to'lmagan bolalarni old o'rindiqda faqat bolaning bo'yi va vazniga mos keladigan maxsus ushlab turuvchi moslama (avtokreslo) yordamida tashish mumkin."
-                },
-                {
-                    topic: "Avariya chirog'i",
-                    icon: "fa-triangle-exclamation",
-                    scenario: "Yo'lda majburiy to'xtash holati.",
-                    question: "Avariya to'xtash belgisi aholi punktida mashinadan qancha masofada o'rnatiladi?",
-                    options: [
-                        "Kamida 15 metr masofada",
-                        "Kamida 30 metr masofada",
-                        "Mashinadan 5 metr masofada",
-                        "Mashinaning to'g'ridan-to'g'ri orqasiga qo'yiladi"
-                    ],
-                    correct: 0,
-                    explanation: "Avariya sababli to'xtaganda, ogohlantiruvchi belgi aholi punktlarida transport vositasidan kamida 15 metr, aholi punktlaridan tashqarida esa kamida 30 metr masofada o'rnatiladi."
-                },
-                {
-                    topic: "Gabarit chiroqlari",
-                    icon: "fa-sun",
-                    scenario: "Kunduz kuni harakatlanish.",
-                    question: "Kunduzi barcha transport vositalarida yaqinni yorituvchi chiroqlar yoki kunduzgi chiroqlar (DRL) yoqilishi shartmi?",
-                    options: [
-                        "Ha, harakat xavfsizligini ta'minlash uchun yoqilishi shart",
-                        "Faqat yomg'ir yog'ganda shart",
-                        "Faqat shahar tashqarisida shart",
-                        "Yo'q, faqat kechasi yoqiladi"
-                    ],
-                    correct: 0,
-                    explanation: "YHQga muvofiq, harakatlanish xavfsizligini oshirish maqsadida barcha transport vositalari kunduzi yaqinni yorituvchi chiroqlari yoki kunduzgi yoritish chiroqlarini yoqib harakatlanishi shart."
-                },
-                {
-                    topic: "Turar-joy dahalari",
-                    icon: "fa-house",
-                    scenario: "5.38 'Turar joy dahasi' belgisi o'rnatilgan hudud.",
-                    question: "Turar-joy dahalarida (jiloy zona) ruxsat etilgan eng yuqori tezlik qancha?",
-                    options: [
-                        "20 km/soat",
-                        "30 km/soat",
-                        "40 km/soat",
-                        "15 km/soat"
-                    ],
-                    correct: 0,
-                    explanation: "Turar-joy dahalari va hovli hududlarida transport vositalarining harakatlanish tezligi soatiga 20 kilometrdan oshmasligi kerak. Piyodalar ustunlikka ega."
-                },
-                {
-                    topic: "Guvohnoma toifalari",
-                    icon: "fa-id-card",
-                    scenario: "'B' toifali haydovchilik guvohnomasi.",
-                    question: "'B' toifasidagi haydovchilik guvohnomasi qanday transport vositalarini boshqarish huquqini beradi?",
-                    options: [
-                        "Ruxsat etilgan to'la vazni 3500 kg dan va o'rindiqlar soni haydovchinikidan tashqari 8 tadan oshmaydigan avtomobillarni",
-                        "Faqat yengil taksilarni",
-                        "Yuk vazni 5000 kg bo'lgan yuk mashinalarini",
-                        "Barcha turdagi avtobuslarni"
-                    ],
-                    correct: 0,
-                    explanation: "'B' toifasi — ruxsat etilgan to'la vazni 3.5 tonnadan oshmaydigan va haydovchi o'rnidan tashqari o'rindiqlar soni 8 tadan ko'p bo'lmagan transport vositalarini boshqarish imkonini beradi."
-                },
-                {
-                    topic: "Tibbiy yordam",
-                    icon: "fa-kit-medical",
-                    scenario: "YTH sodir bo'lganda birinchi tibbiy yordam ko'rsatish.",
-                    question: "Kuchli arterial qon ketishida qonni to'xtatish uchun dastlab nima qilinadi?",
-                    options: [
-                        "Qon ketayotgan joydan yuqoriroqqa jgut (bog'ich) qo'yiladi va vaqti yozib qo'yiladi",
-                        "Yaraga spirt quyiladi",
-                        "Faqat bint bilan yengil bog'lanadi",
-                        "Jabrlanuvchiga issiq choy beriladi"
-                    ],
-                    correct: 0,
-                    explanation: "Arterial qon ketishida qon favvora kabi otilib chiqadi. Uni to'xtatish uchun yaradan yuqoriroq sohaga jgut qo'yiladi va qo'yilgan vaqt aniq qayd etiladi."
-                }
-            ]
-        };
-
-        // Populate other tickets by generating variants
-        for (let t = 2; t <= 5; t++) {
-            ticketsDatabase[t] = ticketsDatabase[1].map((q, idx) => ({
-                ...q,
-                topic: q.topic,
-                question: `[№${t}-bilet] ${q.question}`
-            }));
-        }
-
-        let currentTicketId = 1;
+        let currentTicketIdx = 0;
         let currentQuestionIdx = 0;
         let userAnswers = {};
-        let timerSeconds = 20 * 60;
+        let timerSeconds = 15 * 60;
         let timerInterval = null;
 
         function initQuiz() {
+            renderTicketTabs();
+            loadTicket(0);
+        }
+
+        function renderTicketTabs() {
+            const container = document.getElementById('ticketTabsContainer');
+            container.innerHTML = '';
+            REAL_TICKETS_DATA.forEach((ticket, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold transition ${idx === currentTicketIdx ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`;
+                btn.innerText = `${idx + 1}-Bilet`;
+                btn.onclick = () => loadTicket(idx);
+                container.appendChild(btn);
+            });
+        }
+
+        function loadTicket(ticketIdx) {
+            currentTicketIdx = ticketIdx;
+            currentQuestionIdx = 0;
+            userAnswers = {};
+            
+            document.querySelectorAll('.ticket-tab').forEach((tab, idx) => {
+                tab.className = `ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold transition ${idx === currentTicketIdx ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`;
+            });
+
+            document.getElementById('quizCard').classList.remove('hidden');
+            document.getElementById('resultCard').classList.add('hidden');
+            document.getElementById('ticketBadge').innerText = `${currentTicketIdx + 1}-Bilet (10 ta savol)`;
+
             startTimer();
             buildQuestionGrid();
             renderQuestion();
@@ -575,7 +301,7 @@
 
         function startTimer() {
             clearInterval(timerInterval);
-            timerSeconds = 20 * 60;
+            timerSeconds = 15 * 60;
             timerInterval = setInterval(() => {
                 timerSeconds--;
                 if (timerSeconds <= 0) {
@@ -590,8 +316,10 @@
 
         function buildQuestionGrid() {
             const grid = document.getElementById('questionGrid');
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const qCount = ticket.questions.length;
             grid.innerHTML = '';
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < qCount; i++) {
                 const btn = document.createElement('button');
                 btn.id = `gridBtn_${i}`;
                 btn.className = 'w-full py-2 rounded-xl text-xs font-bold border transition bg-gray-50 border-gray-200 text-gray-700 hover:border-blue-500';
@@ -604,52 +332,41 @@
             }
         }
 
-        function loadTicket(ticketId) {
-            currentTicketId = ticketId;
-            currentQuestionIdx = 0;
-            userAnswers = {};
-            document.querySelectorAll('.ticket-tab').forEach(tab => {
-                if (parseInt(tab.dataset.ticket) === ticketId) {
-                    tab.className = 'ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white';
-                } else {
-                    tab.className = 'ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200';
-                }
-            });
-            document.getElementById('quizCard').classList.remove('hidden');
-            document.getElementById('resultCard').classList.add('hidden');
-            startTimer();
-            buildQuestionGrid();
-            renderQuestion();
-            updateStats();
-        }
-
         function renderQuestion() {
-            const currentList = ticketsDatabase[currentTicketId];
-            const q = currentList[currentQuestionIdx];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const q = ticket.questions[currentQuestionIdx];
+            const qCount = ticket.questions.length;
 
-            document.getElementById('questionNumberBadge').innerText = `Savol ${currentQuestionIdx + 1} / 20`;
-            document.getElementById('questionTopicBadge').innerText = q.topic;
-            document.getElementById('scenarioText').innerText = q.scenario;
-            document.getElementById('questionText').innerText = q.question;
+            document.getElementById('questionNumberBadge').innerText = `Savol ${currentQuestionIdx + 1} / ${qCount}`;
+            document.getElementById('questionText').innerText = q.content;
+
+            const imgBox = document.getElementById('questionImageBox');
+            const imgElem = document.getElementById('questionImage');
+            if (q.image_url) {
+                imgElem.src = STORAGE_BASE_URL + q.image_url;
+                imgBox.classList.remove('hidden');
+            } else {
+                imgBox.classList.add('hidden');
+            }
 
             const optionsContainer = document.getElementById('optionsList');
             optionsContainer.innerHTML = '';
 
             const answered = userAnswers.hasOwnProperty(currentQuestionIdx);
-            const chosenAnswer = userAnswers[currentQuestionIdx];
+            const chosenAnswerId = userAnswers[currentQuestionIdx];
 
-            q.options.forEach((optText, optIdx) => {
+            q.answers.forEach((ans, optIdx) => {
                 const btn = document.createElement('button');
                 btn.className = 'w-full text-left p-4 rounded-2xl border text-sm font-semibold transition flex items-center justify-between ';
                 
                 if (!answered) {
                     btn.className += 'bg-gray-50 hover:bg-blue-50/60 border-gray-200 text-gray-800 hover:border-blue-400';
-                    btn.onclick = () => selectOption(optIdx);
+                    btn.onclick = () => selectOption(ans.id);
                 } else {
                     btn.disabled = true;
-                    if (optIdx === q.correct) {
+                    if (ans.is_correct) {
                         btn.className += 'bg-green-50 border-green-400 text-green-900 font-bold';
-                    } else if (optIdx === chosenAnswer) {
+                    } else if (ans.id === chosenAnswerId) {
                         btn.className += 'bg-red-50 border-red-400 text-red-900';
                     } else {
                         btn.className += 'bg-gray-50 border-gray-100 text-gray-400 opacity-60';
@@ -659,106 +376,111 @@
                 btn.innerHTML = `
                     <div class="flex items-center space-x-3">
                         <span class="w-6 h-6 rounded-full border border-current flex items-center justify-center text-xs font-bold">${optIdx + 1}</span>
-                        <span>${optText}</span>
+                        <span>${ans.content}</span>
                     </div>
-                    ${answered && optIdx === q.correct ? '<i class="fas fa-check-circle text-green-600 text-lg"></i>' : ''}
-                    ${answered && optIdx === chosenAnswer && optIdx !== q.correct ? '<i class="fas fa-times-circle text-red-600 text-lg"></i>' : ''}
+                    ${answered && ans.is_correct ? '<i class="fas fa-check-circle text-green-600 text-lg"></i>' : ''}
+                    ${answered && ans.id === chosenAnswerId && !ans.is_correct ? '<i class="fas fa-times-circle text-red-600 text-lg"></i>' : ''}
                 `;
                 optionsContainer.appendChild(btn);
             });
 
-            // Explanation box
             const expBox = document.getElementById('explanationBox');
-            if (answered) {
+            if (answered && q.description) {
                 expBox.classList.remove('hidden');
-                document.getElementById('explanationText').innerText = q.explanation;
+                document.getElementById('explanationText').innerText = q.description;
             } else {
                 expBox.classList.add('hidden');
             }
 
-            // Buttons state
             document.getElementById('prevBtn').disabled = (currentQuestionIdx === 0);
-            document.getElementById('nextBtn').innerText = (currentQuestionIdx === 19) ? "Natijani ko'rish" : "Keyingisi";
+            document.getElementById('nextBtn').innerText = (currentQuestionIdx === qCount - 1) ? "Natijani ko'rish" : "Keyingisi";
 
             updateGridButtonsHighlight();
         }
 
-        function selectOption(optIdx) {
-            userAnswers[currentQuestionIdx] = optIdx;
+        function selectOption(ansId) {
+            userAnswers[currentQuestionIdx] = ansId;
             renderQuestion();
             updateStats();
             updateGridButtonsHighlight();
 
-            // Check if all answered
-            if (Object.keys(userAnswers).length === 20) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            if (Object.keys(userAnswers).length === ticket.questions.length) {
                 setTimeout(finishQuiz, 1200);
             }
         }
 
         function updateGridButtonsHighlight() {
-            const currentList = ticketsDatabase[currentTicketId];
-            for (let i = 0; i < 20; i++) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            ticket.questions.forEach((q, i) => {
                 const btn = document.getElementById(`gridBtn_${i}`);
-                if (!btn) continue;
+                if (!btn) return;
 
                 if (userAnswers.hasOwnProperty(i)) {
-                    const isCorrect = userAnswers[i] === currentList[i].correct;
+                    const chosenId = userAnswers[i];
+                    const isCorrect = q.answers.some(a => a.id === chosenId && a.is_correct);
                     btn.className = `w-full py-2 rounded-xl text-xs font-bold text-white ${isCorrect ? 'bg-green-500 border-green-600' : 'bg-red-500 border-red-600'}`;
                 } else if (i === currentQuestionIdx) {
                     btn.className = 'w-full py-2 rounded-xl text-xs font-bold bg-blue-600 text-white border-blue-700 ring-2 ring-blue-300';
                 } else {
                     btn.className = 'w-full py-2 rounded-xl text-xs font-bold bg-gray-50 border-gray-200 text-gray-700 hover:border-blue-500';
                 }
-            }
+            });
         }
 
         function navigateQuestion(delta) {
-            if (currentQuestionIdx === 19 && delta === 1) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const qCount = ticket.questions.length;
+            if (currentQuestionIdx === qCount - 1 && delta === 1) {
                 finishQuiz();
                 return;
             }
-            currentQuestionIdx = Math.max(0, Math.min(19, currentQuestionIdx + delta));
+            currentQuestionIdx = Math.max(0, Math.min(qCount - 1, currentQuestionIdx + delta));
             renderQuestion();
         }
 
         function updateStats() {
-            const currentList = ticketsDatabase[currentTicketId];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
             let correct = 0;
             let wrong = 0;
-            Object.keys(userAnswers).forEach(idx => {
-                if (userAnswers[idx] === currentList[idx].correct) {
-                    correct++;
-                } else {
-                    wrong++;
+            ticket.questions.forEach((q, i) => {
+                if (userAnswers.hasOwnProperty(i)) {
+                    const chosenId = userAnswers[i];
+                    const isCorr = q.answers.some(a => a.id === chosenId && a.is_correct);
+                    if (isCorr) correct++;
+                    else wrong++;
                 }
             });
             document.getElementById('correctCount').innerText = correct;
             document.getElementById('wrongCount').innerText = wrong;
-            document.getElementById('unansweredCount').innerText = 20 - (correct + wrong);
+            document.getElementById('unansweredCount').innerText = ticket.questions.length - (correct + wrong);
         }
 
         function finishQuiz() {
             clearInterval(timerInterval);
-            const currentList = ticketsDatabase[currentTicketId];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const total = ticket.questions.length;
             let correct = 0;
             let wrong = 0;
-            Object.keys(userAnswers).forEach(idx => {
-                if (userAnswers[idx] === currentList[idx].correct) {
-                    correct++;
+            ticket.questions.forEach((q, i) => {
+                if (userAnswers.hasOwnProperty(i)) {
+                    const chosenId = userAnswers[i];
+                    const isCorr = q.answers.some(a => a.id === chosenId && a.is_correct);
+                    if (isCorr) correct++;
+                    else wrong++;
                 } else {
                     wrong++;
                 }
             });
-            wrong += (20 - Object.keys(userAnswers).length);
 
-            const passed = (wrong <= 2);
+            const passed = (wrong <= 1);
             document.getElementById('quizCard').classList.add('hidden');
             const resCard = document.getElementById('resultCard');
             resCard.classList.remove('hidden');
 
             document.getElementById('finalCorrect').innerText = correct;
             document.getElementById('finalWrong').innerText = wrong;
-            document.getElementById('finalPercent').innerText = `${Math.round((correct / 20) * 100)}%`;
+            document.getElementById('finalPercent').innerText = `${Math.round((correct / total) * 100)}%`;
 
             const resIcon = document.getElementById('resultIcon');
             const resTitle = document.getElementById('resultTitle');
@@ -767,18 +489,18 @@
             if (passed) {
                 resIcon.className = 'w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-green-100 text-green-600';
                 resIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
-                resTitle.innerText = "Tabriklaymiz! Imtihondan o'tdingiz 🎉";
-                resSub.innerText = "Siz 20 ta savoldan ruxsat etilgan minimal talabni bajardingiz.";
+                resTitle.innerText = "Tabriklaymiz! Bilet muvaffaqiyatli topshirildi 🎉";
+                resSub.innerText = `${currentTicketIdx + 1}-bilet savollariga a'lo darajada javob berdingiz.`;
             } else {
                 resIcon.className = 'w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-red-100 text-red-600';
                 resIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
-                resTitle.innerText = "Imtihon topshirilmadi ❌";
-                resSub.innerText = "Ruxsat etilgan xatolar soni 2 tadan oshib ketdi. Xatolar ustida ishlab qayta urinib ko'ring.";
+                resTitle.innerText = "Bilet topshirilmadi ❌";
+                resSub.innerText = `Xatolar soni ruxsat etilgan miqdordan oshib ketdi. Xatolar ustida ishlab qayta urinib ko'ring.`;
             }
         }
 
         function resetQuiz() {
-            loadTicket(currentTicketId);
+            loadTicket(currentTicketIdx);
         }
 
         document.addEventListener('DOMContentLoaded', initQuiz);

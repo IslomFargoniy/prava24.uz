@@ -9,8 +9,8 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2019345912870056" crossorigin="anonymous"></script>
     
     <title>Билеты ПДД Узбекистан 2026 — Онлайн Экзамен ГАИ | Prava24.uz</title>
-    <meta name="description" content="Официальные экзаменационные билеты ПДД 2026 Узбекистан онлайн. 20 вопросов, таймер 20 минут, пояснения к ошибкам и бесплатный симулятор экзамена.">
-    <meta name="keywords" content="билеты пдд узбекистан 2026, экзамен гаи онлайн, тесты пдд узбекистан, автошкола онлайн, права24">
+    <meta name="description" content="Официальные экзаменационные билеты ПДД 2026 Узбекистан из базы panel.prava24.uz. Реальные вопросы с иллюстрациями, таймер, анализ ошибок и бесплатный симулятор экзамена.">
+    <meta name="keywords" content="билеты пдд узбекистан 2026, экзамен гаи онлайн, тесты пдд узбекистан, автошкола онлайн, права24, panel prava24">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prava24.uz/ru/tickets.html">
     <link rel="alternate" hreflang="uz" href="https://prava24.uz/tickets.html">
@@ -18,7 +18,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
@@ -44,8 +44,8 @@
                 <a href="../tickets.html" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
                     🇺🇿 O'zbekcha
                 </a>
-                <a href="https://t.me/Prava24Bot" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100">
-                    <i class="fab fa-telegram mr-1.5"></i> Telegram Бот
+                <a href="https://panel.prava24.uz" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-md shadow-blue-100">
+                    <i class="fas fa-user mr-1.5"></i> Личный кабинет
                 </a>
             </div>
         </div>
@@ -56,18 +56,18 @@
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 <span class="bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Официальный Стандарт 2026
+                    Официальная база Prava24 (130 Билетов / 1300 Вопросов)
                 </span>
                 <h1 class="text-2xl md:text-3xl font-black mt-2">Онлайн Симулятор Экзамена ПДД</h1>
-                <p class="text-blue-200 text-sm mt-1">20 вопросов • 20 минут • Максимум 2 ошибки для сдачи</p>
+                <p class="text-blue-200 text-sm mt-1">10 вопросов в билете • 15 минут • Реальные иллюстрации</p>
             </div>
             <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10">
                 <div class="text-center">
-                    <div class="text-xs text-blue-200 font-semibold uppercase">Оставшееся время</div>
-                    <div id="timerDisplay" class="text-2xl font-black font-mono text-yellow-300">20:00</div>
+                    <div class="text-xs text-blue-200 font-semibold uppercase">Время</div>
+                    <div id="timerDisplay" class="text-2xl font-black font-mono text-yellow-300">15:00</div>
                 </div>
                 <button id="resetQuizBtn" onclick="resetQuiz()" class="bg-white text-blue-800 hover:bg-blue-50 px-4 py-2 rounded-xl font-bold text-xs transition">
-                    <i class="fas fa-redo-alt mr-1"></i> Начать заново
+                    <i class="fas fa-redo-alt mr-1"></i> Заново
                 </button>
             </div>
         </div>
@@ -76,59 +76,49 @@
     <!-- Main Quiz App Area -->
     <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
         
-        <!-- Ticket Selector Tabs -->
         <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 mb-6 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center space-x-2">
                 <span class="text-sm font-bold text-gray-700">Выберите билет:</span>
-                <div class="flex space-x-1.5 overflow-x-auto py-1" id="ticketTabs">
-                    <button onclick="loadTicket(1)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white" data-ticket="1">Билет №1</button>
-                    <button onclick="loadTicket(2)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="2">Билет №2</button>
-                    <button onclick="loadTicket(3)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="3">Билет №3</button>
-                    <button onclick="loadTicket(4)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="4">Билет №4</button>
-                    <button onclick="loadTicket(5)" class="ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200" data-ticket="5">Билет №5</button>
+                <div class="flex space-x-1.5 overflow-x-auto py-1" id="ticketTabsContainerRu">
                 </div>
             </div>
             <div class="flex items-center space-x-4 text-xs font-semibold">
                 <span class="flex items-center text-green-600"><span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-1.5"></span> Правильно: <strong id="correctCount" class="ml-1">0</strong></span>
                 <span class="flex items-center text-red-600"><span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-1.5"></span> Ошибки: <strong id="wrongCount" class="ml-1">0</strong></span>
-                <span class="flex items-center text-gray-500"><span class="w-2.5 h-2.5 rounded-full bg-gray-400 mr-1.5"></span> Осталось: <strong id="unansweredCount" class="ml-1">20</strong></span>
+                <span class="flex items-center text-gray-500"><span class="w-2.5 h-2.5 rounded-full bg-gray-400 mr-1.5"></span> Осталось: <strong id="unansweredCount" class="ml-1">10</strong></span>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
-            <!-- Left: Question Container -->
             <div class="lg:col-span-2 space-y-6">
                 <div id="quizCard" class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 relative">
                     
                     <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-100">
                         <span id="questionNumberBadge" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-xl">
-                            Вопрос 1 / 20
+                            Вопрос 1 / 10
                         </span>
-                        <span id="questionTopicBadge" class="text-xs font-semibold text-gray-400">
-                            Дорожные знаки и разметка
+                        <span id="ticketBadge" class="text-xs font-bold text-gray-500">
+                            Билет 1
                         </span>
                     </div>
 
-                    <div id="scenarioVisual" class="mb-6 p-4 rounded-2xl bg-slate-900 text-white text-center flex flex-col items-center justify-center min-h-[140px] relative overflow-hidden">
-                        <i id="scenarioIcon" class="fas fa-traffic-light text-4xl text-yellow-400 mb-2"></i>
-                        <p id="scenarioText" class="text-xs text-slate-300 max-w-md font-mono">
-                            Перекресток: Горит основной зеленый сигнал светофора, дополнительная секция выключена.
-                        </p>
+                    <div id="questionImageBox" class="mb-6 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center min-h-[160px] max-h-[320px]">
+                        <img id="questionImage" src="" alt="Иллюстрация вопроса" class="w-full h-full object-contain max-h-[300px]">
                     </div>
 
                     <h2 id="questionText" class="text-lg md:text-xl font-bold text-gray-900 mb-6 leading-snug">
-                        Каковы требования к максимальной скорости движения в населенных пунктах?
+                        ...
                     </h2>
 
                     <div id="optionsList" class="space-y-3">
                     </div>
 
-                    <div id="explanationBox" class="hidden mt-6 p-4 rounded-2xl bg-blue-50 border border-blue-100 text-sm">
-                        <h4 class="font-bold text-blue-900 mb-1 flex items-center">
-                            <i class="fas fa-info-circle text-blue-600 mr-2"></i> Подробное пояснение:
+                    <div id="explanationBox" class="hidden mt-6 p-5 rounded-2xl bg-blue-50 border border-blue-100 text-sm">
+                        <h4 class="font-bold text-blue-900 mb-1.5 flex items-center">
+                            <i class="fas fa-book-bookmark text-blue-600 mr-2"></i> Официальное пояснение ПДД:
                         </h4>
-                        <p id="explanationText" class="text-blue-800 leading-relaxed"></p>
+                        <p id="explanationText" class="text-blue-900 leading-relaxed text-xs md:text-sm"></p>
                     </div>
 
                     <div class="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
@@ -142,48 +132,46 @@
 
                 </div>
 
-                <!-- Result Card -->
                 <div id="resultCard" class="hidden bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center">
                     <div id="resultIcon" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-green-100 text-green-600">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h2 id="resultTitle" class="text-2xl font-black text-gray-900 mb-2">Экзамен Успешно Сдан!</h2>
-                    <p id="resultSubtitle" class="text-gray-600 text-sm mb-6">Вы набрали необходимое количество баллов для сдачи.</p>
+                    <h2 id="resultTitle" class="text-2xl font-black text-gray-900 mb-2">Билет Завершен!</h2>
+                    <p id="resultSubtitle" class="text-gray-600 text-sm mb-6">Ваш результат подсчитан.</p>
                     
                     <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-8">
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">Правильно</div>
-                            <div id="finalCorrect" class="text-xl font-black text-green-600">19</div>
+                            <div id="finalCorrect" class="text-xl font-black text-green-600">0</div>
                         </div>
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">Ошибок</div>
-                            <div id="finalWrong" class="text-xl font-black text-red-600">1</div>
+                            <div id="finalWrong" class="text-xl font-black text-red-600">0</div>
                         </div>
                         <div class="p-3 bg-gray-50 rounded-xl">
                             <div class="text-xs text-gray-500 font-semibold">Результат</div>
-                            <div id="finalPercent" class="text-xl font-black text-blue-600">95%</div>
+                            <div id="finalPercent" class="text-xl font-black text-blue-600">0%</div>
                         </div>
                     </div>
 
-                    <div class="flex justify-center space-x-4">
-                        <button onclick="resetQuiz()" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
-                            <i class="fas fa-redo-alt mr-2"></i> Пройти еще раз
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button onclick="resetQuiz()" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition text-sm">
+                            <i class="fas fa-redo-alt mr-1.5"></i> Пройти еще раз
                         </button>
-                        <a href="https://t.me/Prava24Bot" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-black transition">
-                            <i class="fab fa-telegram mr-2"></i> Практика в Telegram
+                        <a href="https://panel.prava24.uz" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-black transition text-sm">
+                            <i class="fas fa-layer-group mr-1.5"></i> Все 130 билетов в кабинете
                         </a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Right Column -->
             <div class="space-y-6">
                 
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
                     <h3 class="text-sm font-black text-gray-900 uppercase tracking-wider mb-4 flex items-center justify-between">
-                        <span>Сетка вопросов</span>
-                        <span class="text-xs font-normal text-gray-400">1-20</span>
+                        <span>Список вопросов</span>
+                        <span id="gridLabel" class="text-xs font-normal text-gray-400">1-10</span>
                     </h3>
                     <div id="questionGrid" class="grid grid-cols-5 gap-2.5">
                     </div>
@@ -191,24 +179,24 @@
 
                 <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-6 text-white shadow-xl shadow-blue-500/10 text-center">
                     <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3">
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="font-black text-lg mb-1">Удобно в Telegram?</h3>
+                    <h3 class="font-black text-lg mb-1">Платформа Prava24</h3>
                     <p class="text-blue-100 text-xs mb-4">
-                        Тренируйтесь в боте @Prava24Bot в любое время и готовьтесь к экзамену без ограничений!
+                        Войдите в личный кабинет и отслеживайте свой прогресс по всем 130 билетам онлайн!
                     </p>
-                    <a href="https://t.me/Prava24Bot" target="_blank" class="block w-full bg-white text-blue-700 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-50 transition">
-                        Открыть бота <i class="fas fa-external-link-alt ml-1"></i>
+                    <a href="https://panel.prava24.uz" target="_blank" class="block w-full bg-white text-blue-700 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-50 transition">
+                        Войти в кабинет <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
 
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 text-xs text-gray-600 space-y-2">
                     <h4 class="font-black text-gray-900 text-sm mb-2 flex items-center">
-                        <i class="fas fa-clipboard-check text-blue-600 mr-2"></i> Регламент экзамена:
+                        <i class="fas fa-circle-info text-blue-600 mr-2"></i> О билетах:
                     </h4>
-                    <p>• В билете содержится 20 теоретических вопросов.</p>
-                    <p>• Для успешной сдачи необходимо правильно ответить минимум на <strong>18 вопросов</strong> (допускается не более 2 ошибок).</p>
-                    <p>• Время на решение: 20 минут.</p>
+                    <p>• Вопросы синхронизированы с базой <strong>panel.prava24.uz</strong>.</p>
+                    <p>• 10 экзаменационных вопросов в каждом билете.</p>
+                    <p>• Мгновенный показ правильного ответа с официальным комментарием.</p>
                 </div>
 
             </div>
@@ -241,7 +229,7 @@
             <div>
                 <h4 class="font-bold mb-4 text-sm tracking-wider uppercase text-gray-300">Информация</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="about.html" class="hover:text-white transition">О проекте</a></li>
+                    <li><a href="about.html" class="hover:text-white transition">О нас</a></li>
                     <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
                     <li><a href="privacy-policy.html" class="hover:text-white transition">Конфиденциальность</a></li>
                     <li><a href="terms.html" class="hover:text-white transition">Условия использования</a></li>
@@ -253,308 +241,45 @@
         </div>
     </footer>
 
-    <!-- Quiz Engine JS (Russian) -->
+    <!-- Real Data Script -->
+    <script src="../panel_data.js"></script>
     <script>
-        const ticketsDatabaseRu = {
-            1: [
-                {
-                    topic: "Общие положения",
-                    icon: "fa-car-side",
-                    scenario: "Скоростной режим в населенных пунктах Узбекистана.",
-                    question: "Какова разрешенная максимальная скорость движения транспортных средств в населенных пунктах Республики Узбекистан?",
-                    options: [
-                        "60 км/ч (кроме специально обозначенных участков)",
-                        "70 км/ч",
-                        "80 км/ч",
-                        "50 км/ч"
-                    ],
-                    correct: 0,
-                    explanation: "Согласно ПДД Узбекистана, в населенных пунктах разрешается движение со скоростью не более 60 км/ч."
-                },
-                {
-                    topic: "Дорожные знаки",
-                    icon: "fa-ban",
-                    scenario: "Зона действия запрещающего знака 3.24.",
-                    question: "До какого места действует знак 3.24 'Ограничение максимальной скорости (50)'?",
-                    options: [
-                        "До ближайшего перекрестка за ним или конца населенного пункта",
-                        "Ровно на 100 метров вперед",
-                        "По усмотрению водителя",
-                        "Только до первого светофора"
-                    ],
-                    correct: 0,
-                    explanation: "Зона действия запрещающих знаков распространяется от места установки знака до ближайшего перекрестка за ним, а при отсутствии перекрестка — до конца населенного пункта."
-                },
-                {
-                    topic: "Проезд перекрестков",
-                    icon: "fa-traffic-light",
-                    scenario: "Нерегулируемый перекресток неравнозначных дорог.",
-                    question: "Обязан ли водитель, движущийся по главной дороге, уступать дорогу автомобилю, выезжающему со второстепенной?",
-                    options: [
-                        "Нет, водитель на главной дороге имеет преимущество",
-                        "Да, если тот приближается справа",
-                        "Только если это грузовой автомобиль",
-                        "Водители разъезжаются по взаимной договоренности"
-                    ],
-                    correct: 0,
-                    explanation: "Транспортное средство, движущееся по главной дороге, пользуется преимущественным правом проезда по отношению к транспортным средствам на второстепенной дороге."
-                },
-                {
-                    topic: "Ремни безопасности",
-                    icon: "fa-user-shield",
-                    scenario: "Требования к использованию ремней безопасности.",
-                    question: "Кто обязан быть пристегнут ремнем безопасности во время движения?",
-                    options: [
-                        "Водитель и все пассажиры на местах, оборудованных ремнями",
-                        "Только водитель",
-                        "Только пассажир на переднем сиденье",
-                        "Только при поездках за городом"
-                    ],
-                    correct: 0,
-                    explanation: "Во время движения водитель и все пассажиры на оборудованных ремнями безопасности сиденьях обязаны быть пристегнуты."
-                },
-                {
-                    topic: "Пешеходный переход",
-                    icon: "fa-person-walking",
-                    scenario: "Приближение к нерегулируемому пешеходному переходу.",
-                    question: "Что обязан сделать водитель при приближении к нерегулируемому пешеходному переходу?",
-                    options: [
-                        "Снизить скорость и уступить дорогу пешеходам, переходящим проезжую часть",
-                        "Подать звуковой сигнал и ускорить движение",
-                        "Остановиться только если пешеход поднял руку",
-                        "Проехать переход без изменения скорости"
-                    ],
-                    correct: 0,
-                    explanation: "Водитель транспортного средства, приближающегося к нерегулируемому пешеходному переходу, обязан снизить скорость или остановиться перед переходом, чтобы пропустить пешеходов."
-                },
-                {
-                    topic: "Сигналы маневрирования",
-                    icon: "fa-lightbulb",
-                    scenario: "Включение и выключение указателей поворота.",
-                    question: "Когда необходимо включать и выключать световые указатели поворота?",
-                    options: [
-                        "Заблаговременно до начала маневра и выключать сразу после его завершения",
-                        "Только в момент совершения поворота",
-                        "При отсутствии других машин включать необязательно",
-                        "Выключать через 1 минуту после маневра"
-                    ],
-                    correct: 0,
-                    explanation: "Подача сигнала указателями поворота должна производиться заблаговременно до начала маневра и прекращаться немедленно после его завершения."
-                },
-                {
-                    topic: "Использование телефона",
-                    icon: "fa-mobile-screen",
-                    scenario: "Пользование мобильной связью во время управления автомобилем.",
-                    question: "В каких случаях водителю разрешается пользоваться телефоном во время движения?",
-                    options: [
-                        "Только с использованием гарнитуры или громкой связи (Hands-free)",
-                        "В любое время держа телефон в руке",
-                        "Только во время остановки на запрещающий сигнал светофора",
-                        "Разрешено только для набора коротких сообщений"
-                    ],
-                    correct: 0,
-                    explanation: "Водителю запрещается пользоваться во время движения телефоном, не оборудованным техническим устройством, позволяющим вести переговоры без использования рук."
-                },
-                {
-                    topic: "Остановка и стоянка",
-                    icon: "fa-square-parking",
-                    scenario: "Остановка перед пешеходным переходом.",
-                    question: "На каком расстоянии до пешеходного перехода запрещается остановка?",
-                    options: [
-                        "Ближе 5 метров перед пешеходным переходом",
-                        "Ближе 15 метров до перехода",
-                        "Только непосредственно на самой 'зебре'",
-                        "Ограничений по расстоянию нет"
-                    ],
-                    correct: 0,
-                    explanation: "Остановка запрещается на пешеходных переходах и ближе 5 метров перед ними."
-                },
-                {
-                    topic: "Железнодорожный переезд",
-                    icon: "fa-train",
-                    scenario: "Переезд с открытым шлагбаумом и мигающим красным сигналом.",
-                    question: "Разрешен ли выезд на железнодорожный переезд при открытом шлагбауме, если мигает красный сигнал светофора?",
-                    options: [
-                        "Запрещен, движение через переезд категорически запрещено",
-                        "Разрешен, так как шлагбаум открыт",
-                        "Разрешен только при отсутствии приближающегося поезда",
-                        "Разрешен с максимальной осторожностью"
-                    ],
-                    correct: 0,
-                    explanation: "Запрещается выезжать на переезд при запрещающем сигнале светофора независимо от положения и наличия шлагбаума."
-                },
-                {
-                    topic: "Сигналы светофора",
-                    icon: "fa-traffic-light",
-                    scenario: "Включение желтого сигнала светофора.",
-                    question: "Что означает включение желтого сигнала светофора?",
-                    options: [
-                        "Запрещает движение и предупреждает о предстоящей смене сигналов",
-                        "Разрешает движение во всех направлениях",
-                        "Разрешает движение только направо",
-                        "Означает, что необходимо срочно увеличить скорость"
-                    ],
-                    correct: 0,
-                    explanation: "Желтый сигнал запрещает движение (кроме случаев, когда без экстренного торможения остановиться невозможно) и предупреждает о скорой смене сигналов."
-                },
-                {
-                    topic: "Обгон",
-                    icon: "fa-arrows-left-right",
-                    scenario: "Обгон в условиях ограниченной видимости.",
-                    question: "Разрешен ли обгон на опасных поворотах и в конце подъема?",
-                    options: [
-                        "Запрещен с выездом на полосу встречного движения",
-                        "Разрешен только тихоходных транспортных средств",
-                        "Разрешен в светлое время суток",
-                        "Разрешен, если нет встречных машин"
-                    ],
-                    correct: 0,
-                    explanation: "Обгон запрещен в конце подъема, на опасных поворотах и на других участках с ограниченной видимостью."
-                },
-                {
-                    topic: "Буксировка",
-                    icon: "fa-truck-pickup",
-                    scenario: "Буксировка в условиях гололедицы.",
-                    question: "Разрешена ли буксировка на гибкой сцепке в гололедицу?",
-                    options: [
-                        "Запрещена",
-                        "Разрешена со скоростью не более 20 км/ч",
-                        "Разрешена только грузовых автомобилей",
-                        "Разрешена при включенной аварийной сигнализации"
-                    ],
-                    correct: 0,
-                    explanation: "В гололедицу буксировка на гибкой сцепке категорически запрещается."
-                },
-                {
-                    topic: "Спецтранспорт",
-                    icon: "fa-truck-medical",
-                    scenario: "Приближение автомобиля скорой помощи с включенным проблесковым маячком и сиреной.",
-                    question: "Какие действия обязаны предпринять водители при приближении спецтранспорта с синим маячком и сиреной?",
-                    options: [
-                        "Уступить дорогу для обеспечения беспрепятственного проезда",
-                        "Увеличить скорость и ехать впереди",
-                        "Остановиться строго у правого бордюра",
-                        "Подать звуковой сигнал"
-                    ],
-                    correct: 0,
-                    explanation: "При приближении транспортного средства с включенными синим маячком и специальным звуковым сигналом водители обязаны уступить дорогу."
-                },
-                {
-                    topic: "Круговое движение",
-                    icon: "fa-rotate",
-                    scenario: "Проезд перекрестка с круговым движением (знак 4.3).",
-                    question: "Кто пользуется преимуществом на перекрестке с круговым движением?",
-                    options: [
-                        "Транспортные средства, движущиеся по кругу",
-                        "Транспортные средства, въезжающие на круг",
-                        "Более крупногабаритные автомобили",
-                        "Транспортные средства справа"
-                    ],
-                    correct: 0,
-                    explanation: "Если не установлены другие знаки приоритета, преимуществом пользуются транспортные средства, уже находящиеся на круговом перекрестке."
-                },
-                {
-                    topic: "Перевозка детей",
-                    icon: "fa-child",
-                    scenario: "Перевозка детей до 12 лет на переднем сиденье.",
-                    question: "При каком условии разрешается перевозка ребенка до 12 лет на переднем сиденье легкового автомобиля?",
-                    options: [
-                        "Только с использованием специального детского удерживающего устройства (автокресла)",
-                        "На руках у взрослого пассажира",
-                        "Пристегнутым стандартным ремнем безопасности",
-                        "Перевозка детей на переднем сиденье запрещена в любом случае"
-                    ],
-                    correct: 0,
-                    explanation: "Перевозка детей до 12-летнего возраста на переднем сиденье легкового автомобиля разрешается только с использованием специального детского удерживающего устройства."
-                },
-                {
-                    topic: "Знак аварийной остановки",
-                    icon: "fa-triangle-exclamation",
-                    scenario: "Вынужденная остановка в населенном пункте.",
-                    question: "На каком расстоянии от автомобиля выставляется знак аварийной остановки в населенном пункте?",
-                    options: [
-                        "Не менее 15 метров",
-                        "Не менее 30 метров",
-                        "Не менее 5 метров",
-                        "Непосредственно за бампером автомобиля"
-                    ],
-                    correct: 0,
-                    explanation: "Знак аварийной остановки устанавливается на расстоянии не менее 15 метров от транспортного средства в населенных пунктах и не менее 30 метров — вне населенных пунктов."
-                },
-                {
-                    topic: "Световые приборы",
-                    icon: "fa-sun",
-                    scenario: "Движение в светлое время суток.",
-                    question: "Обязаны ли водители включать ближний свет фар или дневные ходовые огни (ДХО) в светлое время суток?",
-                    options: [
-                        "Да, на всех движущихся транспортных средствах",
-                        "Только в условиях сильного дождя",
-                        "Только вне населенных пунктов",
-                        "Нет, только в темное время суток"
-                    ],
-                    correct: 0,
-                    explanation: "В светлое время суток на всех движущихся транспортных средствах с целью их обозначения должны включаться фары ближнего света или дневные ходовые огни."
-                },
-                {
-                    topic: "Жилая зона",
-                    icon: "fa-house",
-                    scenario: "Движение в жилых зонах и дворовых территориях.",
-                    question: "Какова максимальная скорость движения в жилых зонах (знак 5.38)?",
-                    options: [
-                        "20 км/ч",
-                        "30 км/ч",
-                        "40 км/ч",
-                        "15 км/ч"
-                    ],
-                    correct: 0,
-                    explanation: "В жилой зоне и на дворовых территориях скорость движения транспортных средств не должна превышать 20 км/ч. Пешеходы имеют преимущество."
-                },
-                {
-                    topic: "Категории прав",
-                    icon: "fa-id-card",
-                    scenario: "Водительское удостоверение категории 'B'.",
-                    question: "Какими транспортными средствами дает право управлять категория 'B'?",
-                    options: [
-                        "Автомобилями разрешенной максимальной массой до 3500 кг и числом сидячих мест не более 8 (помимо сиденья водителя)",
-                        "Исключительно легковыми такси",
-                        "Грузовыми автомобилями массой свыше 5 тонн",
-                        "Любыми типами автобусов"
-                    ],
-                    correct: 0,
-                    explanation: "Категория 'B' позволяет управлять автомобилями, разрешенная максимальная масса которых не превышает 3,5 тонн и число сидячих мест, помимо сиденья водителя, не превышает 8."
-                },
-                {
-                    topic: "Первая медицинская помощь",
-                    icon: "fa-kit-medical",
-                    scenario: "Оказание первой помощи при ДТП.",
-                    question: "Что необходимо сделать в первую очередь при сильном артериальном кровотечении?",
-                    options: [
-                        "Наложить кровоостанавливающий жгут выше места ранения и зафиксировать время наложения",
-                        "Залить рану йодом или спиртом",
-                        "Наложить легкую марлевую повязку",
-                        "Дать пострадавшему горячий чай"
-                    ],
-                    correct: 0,
-                    explanation: "При артериальном кровотечении кровь ярко-алая и бьет пульсирующей струей. Для остановки накладывают жгут выше места ранения с запиской о точном времени наложения."
-                }
-            ]
-        };
-
-        for (let t = 2; t <= 5; t++) {
-            ticketsDatabaseRu[t] = ticketsDatabaseRu[1].map((q, idx) => ({
-                ...q,
-                topic: q.topic,
-                question: `[Билет №${t}] ${q.question}`
-            }));
-        }
-
-        let currentTicketId = 1;
+        let currentTicketIdx = 0;
         let currentQuestionIdx = 0;
         let userAnswers = {};
-        let timerSeconds = 20 * 60;
+        let timerSeconds = 15 * 60;
         let timerInterval = null;
 
         function initQuiz() {
+            renderTicketTabs();
+            loadTicket(0);
+        }
+
+        function renderTicketTabs() {
+            const container = document.getElementById('ticketTabsContainerRu');
+            container.innerHTML = '';
+            REAL_TICKETS_DATA.forEach((ticket, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold transition ${idx === currentTicketIdx ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`;
+                btn.innerText = `Билет №${idx + 1}`;
+                btn.onclick = () => loadTicket(idx);
+                container.appendChild(btn);
+            });
+        }
+
+        function loadTicket(ticketIdx) {
+            currentTicketIdx = ticketIdx;
+            currentQuestionIdx = 0;
+            userAnswers = {};
+            
+            document.querySelectorAll('.ticket-tab').forEach((tab, idx) => {
+                tab.className = `ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold transition ${idx === currentTicketIdx ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`;
+            });
+
+            document.getElementById('quizCard').classList.remove('hidden');
+            document.getElementById('resultCard').classList.add('hidden');
+            document.getElementById('ticketBadge').innerText = `Билет №${currentTicketIdx + 1} (10 вопросов)`;
+
             startTimer();
             buildQuestionGrid();
             renderQuestion();
@@ -563,7 +288,7 @@
 
         function startTimer() {
             clearInterval(timerInterval);
-            timerSeconds = 20 * 60;
+            timerSeconds = 15 * 60;
             timerInterval = setInterval(() => {
                 timerSeconds--;
                 if (timerSeconds <= 0) {
@@ -578,8 +303,10 @@
 
         function buildQuestionGrid() {
             const grid = document.getElementById('questionGrid');
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const qCount = ticket.questions.length;
             grid.innerHTML = '';
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < qCount; i++) {
                 const btn = document.createElement('button');
                 btn.id = `gridBtn_${i}`;
                 btn.className = 'w-full py-2 rounded-xl text-xs font-bold border transition bg-gray-50 border-gray-200 text-gray-700 hover:border-blue-500';
@@ -592,52 +319,41 @@
             }
         }
 
-        function loadTicket(ticketId) {
-            currentTicketId = ticketId;
-            currentQuestionIdx = 0;
-            userAnswers = {};
-            document.querySelectorAll('.ticket-tab').forEach(tab => {
-                if (parseInt(tab.dataset.ticket) === ticketId) {
-                    tab.className = 'ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white';
-                } else {
-                    tab.className = 'ticket-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200';
-                }
-            });
-            document.getElementById('quizCard').classList.remove('hidden');
-            document.getElementById('resultCard').classList.add('hidden');
-            startTimer();
-            buildQuestionGrid();
-            renderQuestion();
-            updateStats();
-        }
-
         function renderQuestion() {
-            const currentList = ticketsDatabaseRu[currentTicketId];
-            const q = currentList[currentQuestionIdx];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const q = ticket.questions[currentQuestionIdx];
+            const qCount = ticket.questions.length;
 
-            document.getElementById('questionNumberBadge').innerText = `Вопрос ${currentQuestionIdx + 1} / 20`;
-            document.getElementById('questionTopicBadge').innerText = q.topic;
-            document.getElementById('scenarioText').innerText = q.scenario;
-            document.getElementById('questionText').innerText = q.question;
+            document.getElementById('questionNumberBadge').innerText = `Вопрос ${currentQuestionIdx + 1} / ${qCount}`;
+            document.getElementById('questionText').innerText = q.content;
+
+            const imgBox = document.getElementById('questionImageBox');
+            const imgElem = document.getElementById('questionImage');
+            if (q.image_url) {
+                imgElem.src = STORAGE_BASE_URL + q.image_url;
+                imgBox.classList.remove('hidden');
+            } else {
+                imgBox.classList.add('hidden');
+            }
 
             const optionsContainer = document.getElementById('optionsList');
             optionsContainer.innerHTML = '';
 
             const answered = userAnswers.hasOwnProperty(currentQuestionIdx);
-            const chosenAnswer = userAnswers[currentQuestionIdx];
+            const chosenAnswerId = userAnswers[currentQuestionIdx];
 
-            q.options.forEach((optText, optIdx) => {
+            q.answers.forEach((ans, optIdx) => {
                 const btn = document.createElement('button');
                 btn.className = 'w-full text-left p-4 rounded-2xl border text-sm font-semibold transition flex items-center justify-between ';
                 
                 if (!answered) {
                     btn.className += 'bg-gray-50 hover:bg-blue-50/60 border-gray-200 text-gray-800 hover:border-blue-400';
-                    btn.onclick = () => selectOption(optIdx);
+                    btn.onclick = () => selectOption(ans.id);
                 } else {
                     btn.disabled = true;
-                    if (optIdx === q.correct) {
+                    if (ans.is_correct) {
                         btn.className += 'bg-green-50 border-green-400 text-green-900 font-bold';
-                    } else if (optIdx === chosenAnswer) {
+                    } else if (ans.id === chosenAnswerId) {
                         btn.className += 'bg-red-50 border-red-400 text-red-900';
                     } else {
                         btn.className += 'bg-gray-50 border-gray-100 text-gray-400 opacity-60';
@@ -647,103 +363,111 @@
                 btn.innerHTML = `
                     <div class="flex items-center space-x-3">
                         <span class="w-6 h-6 rounded-full border border-current flex items-center justify-center text-xs font-bold">${optIdx + 1}</span>
-                        <span>${optText}</span>
+                        <span>${ans.content}</span>
                     </div>
-                    ${answered && optIdx === q.correct ? '<i class="fas fa-check-circle text-green-600 text-lg"></i>' : ''}
-                    ${answered && optIdx === chosenAnswer && optIdx !== q.correct ? '<i class="fas fa-times-circle text-red-600 text-lg"></i>' : ''}
+                    ${answered && ans.is_correct ? '<i class="fas fa-check-circle text-green-600 text-lg"></i>' : ''}
+                    ${answered && ans.id === chosenAnswerId && !ans.is_correct ? '<i class="fas fa-times-circle text-red-600 text-lg"></i>' : ''}
                 `;
                 optionsContainer.appendChild(btn);
             });
 
             const expBox = document.getElementById('explanationBox');
-            if (answered) {
+            if (answered && q.description) {
                 expBox.classList.remove('hidden');
-                document.getElementById('explanationText').innerText = q.explanation;
+                document.getElementById('explanationText').innerText = q.description;
             } else {
                 expBox.classList.add('hidden');
             }
 
             document.getElementById('prevBtn').disabled = (currentQuestionIdx === 0);
-            document.getElementById('nextBtn').innerText = (currentQuestionIdx === 19) ? "Посмотреть результат" : "Следующий";
+            document.getElementById('nextBtn').innerText = (currentQuestionIdx === qCount - 1) ? "Результат" : "Вперед";
 
             updateGridButtonsHighlight();
         }
 
-        function selectOption(optIdx) {
-            userAnswers[currentQuestionIdx] = optIdx;
+        function selectOption(ansId) {
+            userAnswers[currentQuestionIdx] = ansId;
             renderQuestion();
             updateStats();
             updateGridButtonsHighlight();
 
-            if (Object.keys(userAnswers).length === 20) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            if (Object.keys(userAnswers).length === ticket.questions.length) {
                 setTimeout(finishQuiz, 1200);
             }
         }
 
         function updateGridButtonsHighlight() {
-            const currentList = ticketsDatabaseRu[currentTicketId];
-            for (let i = 0; i < 20; i++) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            ticket.questions.forEach((q, i) => {
                 const btn = document.getElementById(`gridBtn_${i}`);
-                if (!btn) continue;
+                if (!btn) return;
 
                 if (userAnswers.hasOwnProperty(i)) {
-                    const isCorrect = userAnswers[i] === currentList[i].correct;
+                    const chosenId = userAnswers[i];
+                    const isCorrect = q.answers.some(a => a.id === chosenId && a.is_correct);
                     btn.className = `w-full py-2 rounded-xl text-xs font-bold text-white ${isCorrect ? 'bg-green-500 border-green-600' : 'bg-red-500 border-red-600'}`;
                 } else if (i === currentQuestionIdx) {
                     btn.className = 'w-full py-2 rounded-xl text-xs font-bold bg-blue-600 text-white border-blue-700 ring-2 ring-blue-300';
                 } else {
                     btn.className = 'w-full py-2 rounded-xl text-xs font-bold bg-gray-50 border-gray-200 text-gray-700 hover:border-blue-500';
                 }
-            }
+            });
         }
 
         function navigateQuestion(delta) {
-            if (currentQuestionIdx === 19 && delta === 1) {
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const qCount = ticket.questions.length;
+            if (currentQuestionIdx === qCount - 1 && delta === 1) {
                 finishQuiz();
                 return;
             }
-            currentQuestionIdx = Math.max(0, Math.min(19, currentQuestionIdx + delta));
+            currentQuestionIdx = Math.max(0, Math.min(qCount - 1, currentQuestionIdx + delta));
             renderQuestion();
         }
 
         function updateStats() {
-            const currentList = ticketsDatabaseRu[currentTicketId];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
             let correct = 0;
             let wrong = 0;
-            Object.keys(userAnswers).forEach(idx => {
-                if (userAnswers[idx] === currentList[idx].correct) {
-                    correct++;
-                } else {
-                    wrong++;
+            ticket.questions.forEach((q, i) => {
+                if (userAnswers.hasOwnProperty(i)) {
+                    const chosenId = userAnswers[i];
+                    const isCorr = q.answers.some(a => a.id === chosenId && a.is_correct);
+                    if (isCorr) correct++;
+                    else wrong++;
                 }
             });
             document.getElementById('correctCount').innerText = correct;
             document.getElementById('wrongCount').innerText = wrong;
-            document.getElementById('unansweredCount').innerText = 20 - (correct + wrong);
+            document.getElementById('unansweredCount').innerText = ticket.questions.length - (correct + wrong);
         }
 
         function finishQuiz() {
             clearInterval(timerInterval);
-            const currentList = ticketsDatabaseRu[currentTicketId];
+            const ticket = REAL_TICKETS_DATA[currentTicketIdx];
+            const total = ticket.questions.length;
             let correct = 0;
             let wrong = 0;
-            Object.keys(userAnswers).forEach(idx => {
-                if (userAnswers[idx] === currentList[idx].correct) {
-                    correct++;
+            ticket.questions.forEach((q, i) => {
+                if (userAnswers.hasOwnProperty(i)) {
+                    const chosenId = userAnswers[i];
+                    const isCorr = q.answers.some(a => a.id === chosenId && a.is_correct);
+                    if (isCorr) correct++;
+                    else wrong++;
                 } else {
                     wrong++;
                 }
             });
-            wrong += (20 - Object.keys(userAnswers).length);
 
-            const passed = (wrong <= 2);
+            const passed = (wrong <= 1);
             document.getElementById('quizCard').classList.add('hidden');
             const resCard = document.getElementById('resultCard');
             resCard.classList.remove('hidden');
 
             document.getElementById('finalCorrect').innerText = correct;
             document.getElementById('finalWrong').innerText = wrong;
-            document.getElementById('finalPercent').innerText = `${Math.round((correct / 20) * 100)}%`;
+            document.getElementById('finalPercent').innerText = `${Math.round((correct / total) * 100)}%`;
 
             const resIcon = document.getElementById('resultIcon');
             const resTitle = document.getElementById('resultTitle');
@@ -752,18 +476,18 @@
             if (passed) {
                 resIcon.className = 'w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-green-100 text-green-600';
                 resIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
-                resTitle.innerText = "Поздравляем! Экзамен успешно сдан 🎉";
-                resSub.innerText = "Вы успешно ответили на необходимое количество вопросов.";
+                resTitle.innerText = "Поздравляем! Билет сдан 🎉";
+                resSub.innerText = `Вы успешно ответили на вопросы билета №${currentTicketIdx + 1}.`;
             } else {
                 resIcon.className = 'w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 bg-red-100 text-red-600';
                 resIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
-                resTitle.innerText = "Экзамен не сдан ❌";
-                resSub.innerText = "Превышен лимит ошибок (допускается не более 2). Повторите материал и попробуйте снова.";
+                resTitle.innerText = "Билет не сдан ❌";
+                resSub.innerText = "Превышен лимит ошибок. Повторите материал и попробуйте снова.";
             }
         }
 
         function resetQuiz() {
-            loadTicket(currentTicketId);
+            loadTicket(currentTicketIdx);
         }
 
         document.addEventListener('DOMContentLoaded', initQuiz);
